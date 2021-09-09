@@ -51,6 +51,20 @@
       /* background-color: rgba(0, 0, 0, 0.1); */
     }
 
+    .attach-video-modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      padding-top: 40px;
+      left: 640px;
+      top: 0px;
+      width: 650px;
+      height: 620px;
+      overflow: auto;
+      /* box-shadow: 5px 5px 20px 10px #888888; */
+      /* background-color: rgba(0, 0, 0, 0.1); */
+    }
+
 
     /* Modal Content */
     .modal-content {
@@ -650,8 +664,8 @@
                 style="width:130px;height:37px; border:1px solid; border-radius:26px; background:white; font-family:Poppins; font-weight:800;font-size:14px; cursor:pointer"><i
                   style="position:relative; left:-30px; font-size:16px" class="fas fa-cut"></i>Trim
               </button>
-              <button
-                style="width:130px;height:37px; border:1px solid; border-radius:26px; background:white; margin-left:30px; font-family:Poppins; font-weight:800;font-size:14px"><i
+              <button id="attach-video-btn"
+                style="width:130px;height:37px; border:1px solid; border-radius:26px; background:white; margin-left:30px; font-family:Poppins; font-weight:800;font-size:14px; cursor:pointer"><i
                   style="position:relative; left:-5px; font-size:16px" class="fas fa-plus-circle"></i>Attach
                 Video</button>
             </div>
@@ -668,9 +682,9 @@
             </div>
 
             <div style="display:flex; position:relative; left:90px; top:15px">
-              <button style="width:80px; height:35px; border-radius:26px; border:1px solid green; background:green">
+              <button style="width:90px; height:35px; border-radius:26px; border:1px solid green; background:green">
                 <span style="font-family:Poppins; font-weight:800;font-size:14px; color:white"><i style="padding:5px"
-                    class="fas fa-check"></i>Video</span>
+                    class="fas fa-check"></i>Record</span>
               </button>
               <div style="position:relative; left:8px;top:8px">
                 <hr style="width:19px; border:2px solid #707070">
@@ -678,7 +692,7 @@
 
               <button
                 style="width:80px; height:35px; border-radius:26px; border:1px solid green; background:white;margin-left:16px">
-                <span style="font-family:Poppins; font-weight:500;font-size:14px;color:green">Email</span>
+                <span style="font-family:Poppins; font-weight:500;font-size:14px;color:green">Edit</span>
               </button>
               <div style="position:relative; left:8px;top:8px">
                 <hr style="width:19px; border:2px solid #707070">
@@ -686,7 +700,7 @@
 
               <button
                 style="width:80px; height:35px; border-radius:26px; border:1px solid lightgray; background:white;margin-left:16px">
-                <span style="font-family:Poppins; font-weight:500;font-size:14px;color:#D6D6D6">Done</span>
+                <span style="font-family:Poppins; font-weight:500;font-size:14px;color:#D6D6D6">Insert</span>
               </button>
 
             </div>
@@ -718,14 +732,100 @@
           <h3 style="margin:20px">Insert Video</h3>
         </div>
         <div style="height:400px; background:lightgray">
-          <p style="padding:20px">Libraries / Collection 1</p>
+          <p style="padding:20px"><span style="color:red">Libraries /</span> Collection 1</p>
         </div>
         <div>
           <button
-            style="border-radius:26px; background:rgb(144, 8, 8); padding:10px; margin-left:350px;margin-top:10px; border:none; color:white; width:100px">Insert</button>
+            style="border-radius:26px; background:rgb(144, 8, 8); padding:10px; margin-left:350px;margin-top:10px; border:none; color:white; width:100px; cursor:pointer" class="trim-cross">Insert
+          </button>
         </div>
       </div>
     </div>
+
+    <!-- Attach Video Modal Here -->
+    <div id="attachModal" class="attach-video-modal">
+      <div
+        style="background:white;width:500px; height:570px;overflow: auto; margin-top: -10px;margin-left:50px; border-radius:20px; box-shadow: 0px 5px 20px 10px #888888;">
+        <div style="height:40px">
+          <h3 style="margin:20px">Insert Video Attach Video</h3>
+        </div>
+        <div style="height:400px; background:lightgray">
+          <p style="padding:20px"><span style="color:red">Libraries /</span>  Collection 1</p>
+
+          <div style="display:flex; margin-left:5px; margin-top:-12px">
+            <div style="background:white; width:147px;height:150px; border-radius:15px; margin-left:12px">
+              <img style="width:131px; height:110px; padding:8px" src="./media/myVidLibrary/myVid1.png" alt="">
+              <div style="position:relative; text-align:left; top:-12px;left:10px">
+                <h3
+                  style="font-family:Poppins; font-style:normal; font-weight:600; font-size:10px; line-height:1px">
+                  Video_MPGW2346</h3>
+                <small
+                  style="position:relative; font-family:Poppins; font-style:normal; font-weight:500; font-size:7px; top:-7px">12/23/2021</small>
+              </div>
+            </div>
+            <div style="background:white; width:147px;height:150px; border-radius:15px; margin-left:12px">
+              <img style="width:131px; height:110px; padding:8px" src="./media/myVidLibrary/myVid2.png" alt="">
+              <div style="position:relative; text-align:left; top:-12px;left:10px">
+                <h3
+                  style="font-family:Poppins; font-style:normal; font-weight:600; font-size:10px; line-height:1px">
+                  Video_MPGW2346</h3>
+                <small
+                  style="position:relative; font-family:Poppins; font-style:normal; font-weight:500; font-size:7px; top:-7px">12/23/2021</small>
+              </div>
+            </div>
+            <div style="background:white; width:147px;height:150px; border-radius:15px; margin-left:12px">
+              <img style="width:131px; height:110px; padding:8px" src="./media/myVidLibrary/myVid3.png" alt="">
+              <div style="position:relative; text-align:left; top:-12px;left:10px">
+                <h3
+                  style="font-family:Poppins; font-style:normal; font-weight:600; font-size:10px; line-height:1px">
+                  Video_MPGW2346</h3>
+                <small
+                  style="position:relative; font-family:Poppins; font-style:normal; font-weight:500; font-size:7px; top:-7px">12/23/2021</small>
+              </div>
+            </div>
+        </div>
+
+          <div style="display:flex; margin-left:5px; margin-top:15px">
+            <div style="background:white; width:147px;height:150px; border-radius:15px; margin-left:12px">
+              <img style="width:131px; height:110px; padding:8px" src="./media/myVidLibrary/myVid4.png" alt="">
+              <div style="position:relative; text-align:left; top:-12px;left:10px">
+                <h3
+                  style="font-family:Poppins; font-style:normal; font-weight:600; font-size:10px; line-height:1px">
+                  Video_MPGW2346</h3>
+                <small
+                  style="position:relative; font-family:Poppins; font-style:normal; font-weight:500; font-size:7px; top:-7px">12/23/2021</small>
+              </div>
+            </div>
+            <div style="background:white; width:147px;height:150px; border-radius:15px; margin-left:12px">
+              <img style="width:131px; height:110px; padding:8px" src="./media/myVidLibrary/myVid5.png" alt="">
+              <div style="position:relative; text-align:left; top:-12px;left:10px">
+                <h3
+                  style="font-family:Poppins; font-style:normal; font-weight:600; font-size:10px; line-height:1px">
+                  Video_MPGW2346</h3>
+                <small
+                  style="position:relative; font-family:Poppins; font-style:normal; font-weight:500; font-size:7px; top:-7px">12/23/2021</small>
+              </div>
+            </div>
+            <div style="background:white; width:147px;height:150px; border-radius:15px; margin-left:12px">
+              <img style="width:131px; height:110px; padding:8px" src="./media/myVidLibrary/myVid6.png" alt="">
+              <div style="position:relative; text-align:left; top:-12px;left:10px">
+                <h3
+                  style="font-family:Poppins; font-style:normal; font-weight:600; font-size:10px; line-height:1px">
+                  Video_MPGW2346</h3>
+                <small
+                  style="position:relative; font-family:Poppins; font-style:normal; font-weight:500; font-size:7px; top:-7px">12/23/2021</small>
+              </div>
+            </div>
+        </div>
+
+        <div>
+          <button
+            style="border-radius:26px; background:rgb(144, 8, 8); padding:10px; margin-left:350px;margin-top:40px; border:none; color:white; width:100px; cursor:pointer" class="trim-cross">Insert
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 
     <!-- Modal Finish Touches/Edit (After click change button(sept edition))-->
     <div style="display:none" class="modal-content finishing-touches-edit">
@@ -1662,9 +1762,9 @@
             </div>
 
             <div style="display:flex; position:relative; left:108px; top:15px">
-              <button style="width:80px; height:35px; border-radius:26px; border:1px solid gray; background:white">
+              <button style="width:90px; height:35px; border-radius:26px; border:1px solid gray; background:white">
                 <span style="font-family:Poppins; font-weight:800;font-size:14px; color:green"><i style="padding:5px"
-                    class="fas fa-check"></i>Video</span>
+                    class="fas fa-check"></i>Record</span>
               </button>
               <div style="position:relative; left:8px;top:8px">
                 <hr style="width:19px; border:2px solid #707070">
@@ -1672,7 +1772,7 @@
 
               <button
                 style="width:80px; height:35px; border-radius:26px; border:1px solid gray; background:white;margin-left:16px">
-                <span style="font-family:Poppins; font-weight:800;font-size:14px">Email</span>
+                <span style="font-family:Poppins; font-weight:800;font-size:14px">Edit</span>
               </button>
               <div style="position:relative; left:8px;top:8px">
                 <hr style="width:19px; border:2px solid #707070">
@@ -1680,7 +1780,7 @@
 
               <button
                 style="width:80px; height:35px; border-radius:26px; border:1px solid lightgray; background:white;margin-left:16px">
-                <span style="font-family:Poppins; font-weight:500;font-size:14px;color:#D6D6D6">Done</span>
+                <span style="font-family:Poppins; font-weight:500;font-size:14px;color:#D6D6D6">Insert</span>
               </button>
             </div>
 
@@ -2091,7 +2191,7 @@
       </div>
     </div>
 
-  </div>
+  
 
   <script>
     // Get Trim modal
@@ -2101,6 +2201,25 @@
     // When the user clicks the trim button, open the modal 
     trimBtn.onclick = function () {
       trimModal.style.display = "block";
+    }
+    // When the user clicks on <span> (x), close the modal
+      var trimClose = document.getElementsByClassName("trim-cross")[0];
+      trimClose.onclick = function () {
+        trimModal.style.display = "none";
+    }
+
+    // Get Attach Video modal
+    var attachVideoModal = document.getElementById("attachModal");
+    var attachVideoBtn = document.getElementById("attach-video-btn");
+
+    // When the user clicks the trim button, open the modal 
+    attachVideoBtn.onclick = function () {
+      attachVideoModal.style.display = "block";
+    }
+    // When the user clicks on <span> (x), close the modal
+      var trimCloseAttachVideo = document.getElementsByClassName("trim-cross")[1];
+      trimCloseAttachVideo.onclick = function () {
+        attachVideoModal.style.display = "none";
     }
 
 
