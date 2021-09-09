@@ -37,6 +37,21 @@
       /* Black w/ opacity */
     }
 
+    .trim-modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      padding-top: 40px;
+      left: 640px;
+      top: 0px;
+      width: 650px;
+      height: 620px;
+      overflow: auto;
+      /* box-shadow: 5px 5px 20px 10px #888888; */
+      /* background-color: rgba(0, 0, 0, 0.1); */
+    }
+
+
     /* Modal Content */
     .modal-content {
       background-color: white;
@@ -78,7 +93,7 @@
 <body>
 
 
-  <button id="myBtn" class="button-red">Talk Mail Check</button>
+  <button id="myBtn" class="button-red">Talk Mail</button>
 
   <!-- The Modal -->
   <div id="myModal" class="modal">
@@ -624,8 +639,6 @@
           <h1 style="font-family:Poppins; font-style:normal; font-weight:900; font-size:32px">Final appearance</h1>
           <small style="color: gray; margin-top: -20px; margin-left:-125px; position:absolute;">Here's what your video
             will look like.</small>
-          <!-- <div style="display:flex;margin-top:50px">
-              </div> -->
           <div style="width:892px; height:473px; background-color:rgba(247, 247, 247, 0.72)">
             <video controls style="position:relative" width="300" height="300">
               <source src="media/movie.mp4" type="video/mp4">
@@ -633,35 +646,15 @@
             </video>
 
             <div style="display:flex; margin-left:300px;margin-top:30px">
-              <button
-                style="width:130px;height:37px; border:1px solid; border-radius:26px; background:white; font-family:Poppins; font-weight:800;font-size:14px"><i
-                  style="position:relative; left:-30px; font-size:16px" class="fas fa-cut"></i>Trim</button>
+              <button id="trim"
+                style="width:130px;height:37px; border:1px solid; border-radius:26px; background:white; font-family:Poppins; font-weight:800;font-size:14px; cursor:pointer"><i
+                  style="position:relative; left:-30px; font-size:16px" class="fas fa-cut"></i>Trim
+              </button>
               <button
                 style="width:130px;height:37px; border:1px solid; border-radius:26px; background:white; margin-left:30px; font-family:Poppins; font-weight:800;font-size:14px"><i
                   style="position:relative; left:-5px; font-size:16px" class="fas fa-plus-circle"></i>Attach
                 Video</button>
             </div>
-            <!-- <div style="position: relative; top:-30px">
-                  <small style="font-family:Poppins;font-size:12px;font-weight:800">This is the preview of how your video looks like</small>
-                  <button style="border:none; background-color:#F2E9E9;padding:10px;border-radius:25px;cursor:pointer" onclick="showHide(id={hide:'finishing-touches',show:'finishing-touches-edit'})">Change</button>
-                </div> -->
-
-            <!-- <div style="display:flex; left:290px; position:relative">
-                    <div onclick="showHide(id={hide:'finishing-touches',show:'finishing-touches-video-dropdown-1st-btn'})" style="width:92px; height:69px; border:1px solid lightgray; border-radius:15px;margin-left:5px; display:flex;; cursor:pointer">
-                      <i style="margin-left:30px;margin-top:20px;font-size:30px" class="fas fa-plus"></i>
-                    </div>
-
-                    <div class="hoverTest" style="width:92px; height:69px; border:1px solid lightgray; border-radius:15px;margin-left:5px">
-                      <img style="width:100%" src="./media/person1.png" alt="">
-                      <h5>Edit</h5>
-                      <h5 onclick="showHide(id={hide:'finishing-touches',show:'first-section'})">Delete</h5>
-                    </div>
-
-                    <div onclick="showHide(id={hide:'finishing-touches',show:'finishing-touches-video-dropdown-2nd-btn'})" style="width:92px; height:69px; border:1px solid lightgray; border-radius:15px;margin-left:5px; display:flex; cursor:pointer">
-                      <i style="margin-left:30px;margin-top:20px; font-size:30px" class="fas fa-plus"></i>
-                      
-                    </div>                  
-                  </div> -->
 
           </div>
 
@@ -672,20 +665,20 @@
               <button
                 style="border-radius:26px; height:45px; width:150px; color:black; background-color:#f2e9e900; border:none"
                 class=""><span style="font-family:Poppins; font-weight:800; font-size:14px"></span></button>
-              <!-- <button style="border-radius:26px; height:45px; width:150px; color:black; background-color:#f2e9e900" class="start-btn" onclick="showHide(id={hide:'finishing-touches',show:'first-section'})"><span style="font-family:Poppins; font-weight:800; font-size:14px"></span></button> -->
             </div>
 
             <div style="display:flex; position:relative; left:90px; top:15px">
-              <button style="width:80px; height:35px; border-radius:26px; border:1px solid gray; background:white">
-                <span style="font-family:Poppins; font-weight:800;font-size:14px">Video</span>
+              <button style="width:80px; height:35px; border-radius:26px; border:1px solid green; background:green">
+                <span style="font-family:Poppins; font-weight:800;font-size:14px; color:white"><i style="padding:5px"
+                    class="fas fa-check"></i>Video</span>
               </button>
               <div style="position:relative; left:8px;top:8px">
                 <hr style="width:19px; border:2px solid #707070">
               </div>
 
               <button
-                style="width:80px; height:35px; border-radius:26px; border:1px solid lightgray; background:white;margin-left:16px">
-                <span style="font-family:Poppins; font-weight:500;font-size:14px;color:#D6D6D6">Email</span>
+                style="width:80px; height:35px; border-radius:26px; border:1px solid green; background:white;margin-left:16px">
+                <span style="font-family:Poppins; font-weight:500;font-size:14px;color:green">Email</span>
               </button>
               <div style="position:relative; left:8px;top:8px">
                 <hr style="width:19px; border:2px solid #707070">
@@ -696,16 +689,12 @@
                 <span style="font-family:Poppins; font-weight:500;font-size:14px;color:#D6D6D6">Done</span>
               </button>
 
-              <!-- <i style="padding:5px" class="fas fa-circle"></i>
-                  <i style="padding:5px" class="far fa-circle"></i> -->
             </div>
 
-            <!-- <div style="position:relative; margin-top:50px;margin-left:235px">
-                  <hr style="width:10px;width:50px;border-top: 2px solid">
-                </div> -->
             <button
               style="border-radius:25px;width:120px;height:45px;margin-left:200px; background: radial-gradient(85.34% 99% at 4.68% 109%, #FF6363 0%, #E20C9A 100%);"
-              class="start-btn" onclick="showHide(id={hide:'finishing-touches',show:'insert-style'})">Next</button>
+              class="start-btn" onclick="showHide(id={hide:'finishing-touches',show:'insert-style'})">Next
+            </button>
           </div>
 
           <div style="position:relative;top:-225px">
@@ -717,6 +706,23 @@
             </div>
           </div>
 
+        </div>
+      </div>
+    </div>
+
+    <!-- Trim Modal Here -->
+    <div id="trimModal" class="trim-modal">
+      <div
+        style="background:white;width:500px; height:570px;overflow: auto; margin-top: -10px;margin-left:50px; border-radius:20px; box-shadow: 0px 5px 20px 10px #888888;">
+        <div style="height:40px">
+          <h3 style="margin:20px">Insert Video</h3>
+        </div>
+        <div style="height:400px; background:lightgray">
+          <p style="padding:20px">Libraries / Collection 1</p>
+        </div>
+        <div>
+          <button
+            style="border-radius:26px; background:rgb(144, 8, 8); padding:10px; margin-left:350px;margin-top:10px; border:none; color:white; width:100px">Insert</button>
         </div>
       </div>
     </div>
@@ -2088,6 +2094,16 @@
   </div>
 
   <script>
+    // Get Trim modal
+    var trimModal = document.getElementById("trimModal");
+    var trimBtn = document.getElementById("trim");
+
+    // When the user clicks the trim button, open the modal 
+    trimBtn.onclick = function () {
+      trimModal.style.display = "block";
+    }
+
+
     // Get the modal
     var modal = document.getElementById("myModal");
 
