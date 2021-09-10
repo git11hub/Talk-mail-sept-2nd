@@ -5,5 +5,7 @@ function showHide (classId) {
     hide.style.display = 'none';
     show.style.display = 'block';
     
-    console.log(classId)
+    // console.log(classId)
 }
+
+

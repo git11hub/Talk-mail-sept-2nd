@@ -12,6 +12,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+
+  <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" crossorigin="anonymous"> -->
   <style>
     body {
       font-family: Arial, Helvetica, sans-serif;
@@ -654,10 +656,30 @@
           <small style="color: gray; margin-top: -20px; margin-left:-125px; position:absolute;">Here's what your video
             will look like.</small>
           <div style="width:892px; height:473px; background-color:rgba(247, 247, 247, 0.72)">
-            <video controls style="position:relative" width="300" height="300">
-              <source src="media/movie.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
+            <!-- <div style="border:1px solid red; width:343px;height:282px; margin:auto">
+              <video controls style="position:relative" width="300" height="300">
+                <source src="media/movie.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div> -->
+            <div class="container" style="border:none; width:343px;height:282px; margin:auto; border-radius:15px; overflow:hidden">
+              <div class="c-video">
+                <video class="videoNew" src="media/movie.mp4"></video>
+                
+              </div>
+              <!-- <video controls style="position:relative" width="300" height="300">
+                <source src="media/movie.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video> -->
+            </div>
+            <div class="controls" style="margin-left:250px; margin-top:20px">
+              <div class="orange-bar">
+                <div class="orange-juice"></div>                    
+              </div>
+              <div class="buttons" style="margin-top:-25px; margin-left: -340px">
+                <button id="play-pause"></button>
+              </div>
+            </div>
 
             <div style="display:flex; margin-left:300px;margin-top:30px">
               <button id="trim"
@@ -672,16 +694,16 @@
 
           </div>
 
-          <div style="display:flex; top:-30px; margin-left:40px; position:relative">
+          <div style="display:flex; top:-30px; position:relative; left:100px">
             <div style="">
               <i onclick="showHide(id={hide:'finishing-touches',show:'first-section'})"
-                style="position:relative;left:35px; cursor:pointer;top:20px" class="fas fa-trash"></i>
+                style="position:relative; cursor:pointer;top:15px; font-size:20px" class="fas fa-trash"></i>
               <button
                 style="border-radius:26px; height:45px; width:150px; color:black; background-color:#f2e9e900; border:none"
                 class=""><span style="font-family:Poppins; font-weight:800; font-size:14px"></span></button>
             </div>
 
-            <div style="display:flex; position:relative; left:90px; top:15px">
+            <!-- <div style="display:flex; position:relative; left:90px; top:15px">
               <button style="width:90px; height:35px; border-radius:26px; border:1px solid green; background:green">
                 <span style="font-family:Poppins; font-weight:800;font-size:14px; color:white"><i style="padding:5px"
                     class="fas fa-check"></i>Record</span>
@@ -702,13 +724,43 @@
                 style="width:80px; height:35px; border-radius:26px; border:1px solid lightgray; background:white;margin-left:16px">
                 <span style="font-family:Poppins; font-weight:500;font-size:14px;color:#D6D6D6">Insert</span>
               </button>
-
+            </div> -->
+            <div style="display:flex">
+              <div style="display:flex">
+                <i style="font-size:25px; padding:10px; color:#E20C9A; margin-top:5px" class="fas fa-check-circle"></i>
+                <h4 style="color:black">Record</h4>
+                <div style="position:relative; left:8px;top:8px">
+                  <hr style="width:50px; border:1px solid #707070; margin-top:20px">
+                </div>
+              </div>
+              <div style="display:flex; margin-left:20px">
+                <!-- <i style="font-size:25px; padding:10px; color:#E20C9A; margin-top:5px" class="fas fa-check-circle"></i> -->
+                <div style="margin-top:-4px">
+                  <h4 style="background:#E20C9A; color:white; font-size:15px; border-radius:15px;padding:4px; width:17px">2</h4>
+                </div>
+                <h4 style="color:black; margin-left:10px">Edit</h4>
+                <div style="position:relative; left:8px;top:8px">
+                  <hr style="width:50px; border:1px solid #707070; margin-top:20px">
+                </div>
+              </div>
+              <!-- <div style="display:flex">
+                <i style="font-size:25px; padding:10px; color:#E20C9A; margin-top:5px" class="fas fa-check-circle"></i>
+                <h4 style="color:black">Insert</h4>
+              </div> -->
+              <div style="display:flex; margin-left:20px">
+                <!-- <i style="font-size:25px; padding:10px; color:#E20C9A; margin-top:5px" class="fas fa-check-circle"></i> -->
+                <div style="margin-top:-4px">
+                  <h4 style="background:gray; color:white; font-size:15px; border-radius:15px;padding:4px; width:17px">3</h4>
+                </div>
+                <h4 style="color:black; margin-left:10px">Insert</h4>
+              </div>
             </div>
 
-            <button
+            <!-- <button
               style="border-radius:25px;width:120px;height:45px;margin-left:200px; background: radial-gradient(85.34% 99% at 4.68% 109%, #FF6363 0%, #E20C9A 100%);"
               class="start-btn" onclick="showHide(id={hide:'finishing-touches',show:'insert-style'})">Next
-            </button>
+            </button> -->
+            <i style="font-size:30px; margin-left:100px; margin-top:15px; cursor:pointer" class="fas fa-arrow-right" onclick="showHide(id={hide:'finishing-touches',show:'insert-style'})"></i>
           </div>
 
           <div style="position:relative;top:-225px">
@@ -1730,19 +1782,31 @@
           </div>
 
           <div style="margin-top:-19px; background:rgba(247, 247, 247, 0.72); width:892px; height:473px">
-            <video style="" width="300" height="300">
-              <source src="media/movie.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-            <!-- <div style="position: relative; top:-30px">
-                  <small>You have applied standard style</small>
-                  <button style="border:none; background-color:rgb(245, 215, 215);padding:10px;border-radius:25px;cursor:pointer" onclick="showHide(id={hide:'insert-style',show:'after-change-button-click'})">Change</button>
-                </div> -->
-            <div style="position: relative; top:-30px">
-              <small style="font-family:Poppins;font-size:12px;font-weight:800">You have applied standard style</small>
-              <button style="border:none; background-color:#F2E9E9;padding:10px;border-radius:25px;cursor:pointer"
-                onclick="showHide(id={hide:'insert-style',show:'finishing-touches-edit'})">Change</button>
-            </div>
+              <!-- <video style="" width="300" height="300">
+                <source src="media/movie.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video> -->
+              <div class="container" style="border:none; width:343px;height:282px; margin:auto; border-radius:15px; overflow:hidden">
+                <div class="c-video">
+                  <video class="videoNew" src="media/movie.mp4"></video>
+                </div>
+                <div style="position: relative; top:-165px;left:20px">
+                  <i style="font-size:30px; color:white" class="fas fa-play"></i>
+                </div>
+              </div>
+               
+              <div style="position: relative;left:40px; top:50px">
+                <div style="">
+                  <small style="font-family:Poppins;font-size:12px;font-weight:800">Insert with: <strong>Transcript & Reply</strong></small>
+                  <button style="border:none; background-color:#F2E9E9;padding:10px;border-radius:25px;cursor:pointer"
+                    onclick="showHide(id={hide:'insert-style',show:'finishing-touches-edit'})">Change</button>
+                </div>
+                <div style="position: relative; top:10px;left:20px">
+                  <small style="font-family:Poppins;font-size:12px;font-weight:800">Thumbnail: <strong>Automatic</strong></small>
+                  <button style="border:none; background-color:#F2E9E9;padding:10px;border-radius:25px;cursor:pointer"
+                    onclick="showHide(id={hide:'insert-style',show:'finishing-touches-edit'})">Change</button>
+                </div>
+              </div>
           </div>
 
           <!-- <div style="display:flex;left:110px;top:-40px; position:relative">
@@ -1754,40 +1818,65 @@
                 <button style="position:relative;top:15px;left:330px; width:160px; border-radius:25px; height:50px; background-color: rgb(250, 75, 75)" class="start-btn" onclick="showHide(id={hide:'finishing-touches',show:'insert-style'})"><span style="position:relative;margin-left:-10px;margin-top:-10px">Insert TalkMail</span></button>
               </div> -->
           <div style="display:flex; top:-30px; margin-left:40px; position:relative">
-            <div style="">
-              <!-- <i style="position:relative;left:35px" class="fas fa-trash"></i> -->
+            <!-- <div style="">
               <button style="border-radius:26px; height:45px; width:150px; color:black; background-color:#f2e9e9"
                 class="start-btn" onclick="showHide(id={hide:'insert-style',show:'finishing-touches'})"><span
                   style="font-family:Poppins; font-weight:800; font-size:14px">Back</span></button>
-            </div>
+            </div> -->
+            <i style="font-size:30px; margin-left:50px; margin-top:15px; cursor:pointer" class="fas fa-arrow-left" onclick="showHide(id={hide:'insert-style',show:'finishing-touches'})"></i>
 
-            <div style="display:flex; position:relative; left:108px; top:15px">
-              <button style="width:90px; height:35px; border-radius:26px; border:1px solid gray; background:white">
-                <span style="font-family:Poppins; font-weight:800;font-size:14px; color:green"><i style="padding:5px"
+            <!-- <div style="display:flex; position:relative; left:108px; top:15px">
+              <button style="margin-left:-10px; width:90px; height:35px; border-radius:26px; border:1px solid green; background:green">
+                <span style="font-family:Poppins; font-weight:800;font-size:14px; color:white"><i style="padding:5px"
                     class="fas fa-check"></i>Record</span>
               </button>
               <div style="position:relative; left:8px;top:8px">
                 <hr style="width:19px; border:2px solid #707070">
               </div>
-
-              <button
-                style="width:80px; height:35px; border-radius:26px; border:1px solid gray; background:white;margin-left:16px">
-                <span style="font-family:Poppins; font-weight:800;font-size:14px">Edit</span>
+              <button style="margin-left:15px; width:90px; height:35px; border-radius:26px; border:1px solid green; background:green">
+                <span style="font-family:Poppins; font-weight:800;font-size:14px; color:white"><i style="padding:5px"
+                    class="fas fa-check"></i>Edit</span>
               </button>
               <div style="position:relative; left:8px;top:8px">
                 <hr style="width:19px; border:2px solid #707070">
               </div>
-
               <button
-                style="width:80px; height:35px; border-radius:26px; border:1px solid lightgray; background:white;margin-left:16px">
-                <span style="font-family:Poppins; font-weight:500;font-size:14px;color:#D6D6D6">Insert</span>
+                style="width:80px; height:35px; border-radius:26px; border:1px solid green; background:white;margin-left:16px">
+                <span style="font-family:Poppins; font-weight:600;font-size:14px;color:green">Insert</span>
               </button>
+            </div> -->
+            <div style="display:flex; margin-left:156px">
+              <div style="display:flex">
+                <i style="font-size:25px; padding:10px; color:#E20C9A; margin-top:5px" class="fas fa-check-circle"></i>
+                <h4 style="color:black">Record</h4>
+                <div style="position:relative; left:8px;top:8px">
+                  <hr style="width:50px; border:1px solid #707070; margin-top:20px">
+                </div>
+              </div>
+              <div style="display:flex; margin-left:20px">
+                <!-- <i style="font-size:25px; padding:10px; color:#E20C9A; margin-top:5px" class="fas fa-check-circle"></i> -->
+                <div style="margin-top:-4px">
+                  <h4 style="background:#E20C9A; color:white; font-size:15px; border-radius:15px;padding:4px; width:17px">2</h4>
+                </div>
+                <h4 style="color:black; margin-left:10px">Edit</h4>
+                <div style="position:relative; left:8px;top:8px">
+                  <hr style="width:50px; border:1px solid #707070; margin-top:20px">
+                </div>
+              </div>
+              <div style="display:flex; margin-left:20px">
+                <!-- <i style="font-size:25px; padding:10px; color:#E20C9A; margin-top:5px" class="fas fa-check-circle"></i> -->
+                <div style="margin-top:-4px">
+                  <h4 style="background:#E20C9A; color:white; font-size:15px; border-radius:15px;padding:4px; width:17px">3</h4>
+                </div>
+                <h4 style="color:black; margin-left:10px">Insert</h4>
+              </div>
             </div>
 
             <button
-              style="border-radius:25px;width:156px;height:45px;margin-left:200px; background: radial-gradient(85.34% 99% at 4.68% 109%, #FF6363 0%, #E20C9A 100%); padding:12px 24px"
+              style="border-radius:25px;width:156px;height:45px;margin-left:50px; background: radial-gradient(85.34% 99% at 4.68% 109%, #FF6363 0%, #E20C9A 100%); padding:12px 24px"
               class="start-btn"><span style="font-family:Poppins;font-weight:800; font-size:14;color:white">Insert
-                TalkMail</span></button>
+                TalkMail</span>
+            </button>
           </div>
 
           <div style="position:relative;top:-225px">
@@ -2459,6 +2548,33 @@
       activeScreenShare.style.display = "block";
       inActiveScreenShare.style.display = "none"
     }
+
+    /* New video Functions from here */
+var videoNew = document.querySelector(".videoNew");
+var juice = document.querySelector(".orange-juice");
+var btnNewVideo = document.getElementById("play-pause");
+
+function togglePlayPause() {
+    if (videoNew.paused) {
+        btnNewVideo.className = "pause";
+        videoNew.play();
+    } else {
+        btnNewVideo.className = "play";
+        videoNew.pause();
+    }
+}
+
+btnNewVideo.onclick = function() {
+  togglePlayPause()
+}
+
+videoNew.addEventListener("timeupdate", function() {
+  var juicePos = videoNew.currentTime / videoNew.duration;
+  juice.style.width = juicePos * 100 + "%";
+  if (videoNew.ended) {
+    btnNewVideo.className = "play";
+  }
+})
 
   </script>
 </body>
