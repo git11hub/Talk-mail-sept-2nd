@@ -225,7 +225,8 @@
 
 /* New video styling from here */
 .videoNew {
-  width: 376px;
+  /* width: 376px; */
+  width: 100%;
 }
 .c-video {
   width: 100%;
@@ -236,7 +237,7 @@
   display: flex;
   position: relative;
   bottom: 0;
-  width: 50%;
+  width: 80%;
   flex-wrap: wrap;
   /* background: rgba(0, 0, 0, 0.555); */
 }
@@ -270,14 +271,15 @@
 .orange-bar {
   position: relative;
   height: 3px;
-  margin-left: 60px;
-  width: 65%;
+  left: 50px;
+  top: -25px;
+  width: 100%;
   background: gray;
 }
 .orange-juice {
-  margin-top: -3px;
-  height: 10px;
+  margin-top: -1px;
+  height: 5px;
   width: 100%;
-  background-color: red;
+  background-color: black;
   border-radius: 25px;
 }
